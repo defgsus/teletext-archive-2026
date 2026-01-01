@@ -10,6 +10,13 @@ web sources and converts the html into easy digestible json/unicode files.
 The data is stored in [docs/snapshots](docs/snapshots) in a new-line 
 delimited json file for each station. 
 
+There is a new repository every year (to limit the individual sizes):
+- [github.com/defgsus/teletext-archive-unicode](https://github.com/defgsus/teletext-archive-unicode) (started in 2022)
+- [github.com/defgsus/teletext-archive-2023](https://github.com/defgsus/teletext-archive-2023)
+- [github.com/defgsus/teletext-archive-2024](https://github.com/defgsus/teletext-archive-2024)
+- [github.com/defgsus/teletext-archive-2025](https://github.com/defgsus/teletext-archive-2025)
+- [github.com/defgsus/teletext-archive-2026](https://github.com/defgsus/teletext-archive-2026) (this one)
+
 
 ### scraped stations:
 
