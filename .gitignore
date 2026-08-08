@@ -2,6 +2,7 @@ env/
 venv/
 scratchpad/
 export/
+.cache/
 
 .idea/
 *.iml

@@ -1,11 +1,12 @@
 import os
+import pickle
 import sys
 import json
 import glob
 import datetime
 import time
 from pathlib import Path
-from typing import Generator, Tuple, Union, Optional, Any
+from typing import Generator, Tuple, Union, Optional, Any, Literal
 
 import requests
 import bs4
@@ -13,6 +14,9 @@ import bs4
 from .teletext import Teletext, TeletextPage
 
 scraper_classes = dict()
+
+
+CACHE_PATH = Path(__file__).resolve().parent.parent / ".cache"
 
 
 class Scraper:
@@ -42,9 +46,15 @@ class Scraper:
 
             scraper_classes[cls.NAME] = cls
 
-    def __init__(self, verbose: bool = False, raise_errors: bool = False):
+    def __init__(
+            self,
+            verbose: bool = False,
+            raise_errors: bool = False,
+            caching: Literal["", "r", "w", "rw"] = "",
+    ):
         self.verbose = verbose
         self.do_raise_errors = raise_errors
+        self.caching = caching
         self.previous_pages = Teletext()
         self.session = requests.Session()
         self.session.headers = {
@@ -178,12 +188,23 @@ class Scraper:
             print(f"{self.__class__.__name__}:", *args, file=sys.stderr)
 
     def get_html(self, url: str, method: str = "GET", **kwargs) -> requests.Response:
+        cache_filename = CACHE_PATH / self.NAME / sluggify(url)
+        if "r" in self.caching:
+            if cache_filename.exists():
+                with cache_filename.open("rb") as fp:
+                    return pickle.load(fp)
+
         kwargs.setdefault("timeout", self.REQUEST_TIMEOUT)
         self.log("requesting", url)
 
         for i in range(self.REQUEST_RETRIES):
             try:
-                return self.session.request(method=method, url=url, **kwargs)
+                response = self.session.request(method=method, url=url, **kwargs)
+                if "w" in self.caching:
+                    cache_filename.parent.mkdir(parents=True, exist_ok=True)
+                    with cache_filename.open("wb") as fp:
+                        pickle.dump(response, fp)
+                return response
             except requests.RequestException:
                 if i + 1 < self.REQUEST_RETRIES:
                     raise
@@ -208,3 +229,9 @@ class Scraper:
     @classmethod
     def legacy_bytes_to_content(cls, content: bytes) -> Any:
         return content.decode("utf-8")
+
+
+def sluggify(s: str) -> str:
+    for c in ".:/":
+        s = s.replace(c, "-")
+    return s

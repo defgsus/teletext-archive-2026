@@ -28,6 +28,11 @@ def parse_args() -> dict:
         "-j", "--threads", type=int, default=1,
         help="Number of parallel threads (per scraper)"
     )
+    parser.add_argument(
+        "-c", "--caching", type=str, default="",
+        choices=("", "r", "w", "rw"),
+        help="Enable caching of scraped files for development, r=read, w=write, rw=read&write"
+    )
 
     return vars(parser.parse_args())
 
@@ -54,7 +59,13 @@ def scrape(scraper: Scraper) -> str:
     return msg
 
 
-def main(filter: List[str], verbose: bool, threads: int, error: bool):
+def main(
+        filter: List[str],
+        verbose: bool,
+        threads: int,
+        error: bool,
+        caching: str,
+):
 
     filtered_classes = []
     for name in sorted(scraper_classes.keys()):
@@ -64,7 +75,7 @@ def main(filter: List[str], verbose: bool, threads: int, error: bool):
     print(f"update @ {datetime.datetime.utcnow().replace(microsecond=0)} UTC\n")
 
     scrapers = [
-        scraper_class(verbose=verbose, raise_errors=error)
+        scraper_class(verbose=verbose, raise_errors=error, caching=caching)
         for scraper_class in filtered_classes
     ]
 
