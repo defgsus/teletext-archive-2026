@@ -20,23 +20,29 @@ There is a new repository every year (to limit the individual sizes):
 
 ### scraped stations:
 
-| station                                                     | since      | type               | link                                                                         |
-|:------------------------------------------------------------|:-----------|:-------------------|:-----------------------------------------------------------------------------|
-| ✔&nbsp;[3sat](docs/snapshots/3sat.ndjson)                   | 2022-01-28 | html with font-map | https://blog.3sat.de/ttx/                                                    |
-| ✔&nbsp;[ARD](docs/snapshots/ard.ndjson)                     | 2022-01-28 | html               | https://www.ard-text.de/                                                     |
-| ✔&nbsp;[NDR](docs/snapshots/ndr.ndjson)&nbsp;`ϰ`            | 2022-01-27 | html               | https://www.ndr.de/fernsehen/videotext/index.html                            |
-| ✔&nbsp;[n-tv](docs/snapshots/ntv.ndjson)                    | 2022-01-28 | json               | https://www.n-tv.de/mediathek/teletext/                                      |
-| ✔&nbsp;[SR](docs/snapshots/sr.ndjson)                       | 2022-01-28 | html               | https://www.saartext.de/                                                     |
-| ✔&nbsp;[SWR&nbsp;BW](docs/snapshots/swr_bw.ndjson)&nbsp;`ϕ` | 2025-08-02 | html               | https://www.swr.de/video/videotext/swrfernsehen-videotext-bw-100.html        |
-| ✔&nbsp;[SWR&nbsp;RP](docs/snapshots/swr_bw.ndjson)&nbsp;`ϕ` | 2025-08-02 | html               | https://www.swr.de/video/videotext/swrfernsehen-videotext-rp-100.html        |
-| ✔&nbsp;[WDR](docs/snapshots/wdr.ndjson)                     | 2022-01-28 | html               | https://www1.wdr.de/wdrtext/index.html                                       |
-| ✔&nbsp;[ZDF](docs/snapshots/zdf.ndjson)                     | 2022-01-27 | html               | https://teletext.zdf.de/teletext/zdf/                                        |
-| ✔&nbsp;[ZDFinfo](docs/snapshots/zdf-info.ndjson)            | 2022-01-27 | html               | https://teletext.zdf.de/teletext/zdfinfo/                                    |
-| ✔&nbsp;[ZDFneo](docs/snapshots/zdf-neo.ndjson)              | 2022-01-27 | html               | https://teletext.zdf.de/teletext/zdfneo/                                     |
+| station                                                                | since      | type               | link                                                                  |
+|:-----------------------------------------------------------------------|:-----------|:-------------------|:----------------------------------------------------------------------|
+| ✔&nbsp;[3sat](docs/snapshots/3sat.ndjson)                              | 2022-01-28 | html with font-map | https://blog.3sat.de/ttx/                                             |
+| ✔&nbsp;[ARD](docs/snapshots/ard.ndjson)                                | 2022-01-28 | html               | https://www.ard-text.de/                                              |
+| ✔&nbsp;[NDR](docs/snapshots/ndr.ndjson)&nbsp;`ϰ`                       | 2022-01-27 | html               | https://www.ndr.de/fernsehen/videotext/index.html                     |
+| ✔&nbsp;[n-tv](docs/snapshots/ntv.ndjson)&nbsp;`☠`                      | 2022-01-28 | json               | https://www.n-tv.de/mediathek/teletext/                               |
+| ✔&nbsp;[ORF1](docs/snapshots/orf1.ndjson)&nbsp;`🄯`                    | 2026-08-09 | html               | https://text.orf.at/channel/orf1/page/100/1.html                      |
+| ✔&nbsp;[ORF2](docs/snapshots/orf2.ndjson)&nbsp;`🄯`                    | 2026-08-09 | html               | https://text.orf.at/channel/orf2/page/100/1.html                      |
+| ✔&nbsp;[ORF&nbsp;III](docs/snapshots/orf3.ndjson)&nbsp;`🄯`            | 2026-08-09 | html               | https://text.orf.at/channel/orfiii/page/100/1.html                    |
+| ✔&nbsp;[ORF&nbsp;Sport+](docs/snapshots/orfsportplus.ndjson)&nbsp;`🄯` | 2026-08-09 | html               | https://text.orf.at/channel/sportplus/page/100/1.html                 |
+| ✔&nbsp;[SR](docs/snapshots/sr.ndjson)                                  | 2022-01-28 | html               | https://www.saartext.de/                                              |
+| ✔&nbsp;[SWR&nbsp;BW](docs/snapshots/swr_bw.ndjson)&nbsp;`ϕ`            | 2025-08-02 | html               | https://www.swr.de/video/videotext/swrfernsehen-videotext-bw-100.html |
+| ✔&nbsp;[SWR&nbsp;RP](docs/snapshots/swr_bw.ndjson)&nbsp;`ϕ`            | 2025-08-02 | html               | https://www.swr.de/video/videotext/swrfernsehen-videotext-rp-100.html |
+| ✔&nbsp;[WDR](docs/snapshots/wdr.ndjson)                                | 2022-01-28 | html               | https://www1.wdr.de/wdrtext/index.html                                |
+| ✔&nbsp;[ZDF](docs/snapshots/zdf.ndjson)                                | 2022-01-27 | html               | https://teletext.zdf.de/teletext/zdf/                                 |
+| ✔&nbsp;[ZDFinfo](docs/snapshots/zdf-info.ndjson)                       | 2022-01-27 | html               | https://teletext.zdf.de/teletext/zdfinfo/                             |
+| ✔&nbsp;[ZDFneo](docs/snapshots/zdf-neo.ndjson)                         | 2022-01-27 | html               | https://teletext.zdf.de/teletext/zdfneo/                              |
 
 - `ϕ`: Thanks to [@fabianswebworld](https://github.com/fabianswebworld) :)
+- `🄯`: Thanks to [@aaaaalbert](https://github.com/aaaaalbert) :)
 - `ϰ`: NDR officially stopped serving teletext pages on the website in beginning of 2025,
   but the internal page URLs are still working. Though, there is some bad encoding in the snapshots for quite a period!
+- `☠`: n-tv teletext is dead since 2025-11-14 (url only brings up a cloudfront-can't-connect page)  
 
 ### :star: view it :star:
 
@@ -204,10 +210,6 @@ Oh boy, look what else exists on the web:
 - **SRF** https://www.teletext.ch/
 
   Images
-
-- **ORF** https://teletext.orf.at/
-
-  JSON API delivering ... image-urls
 
 - **HRT** https://teletekst.hrt.hr/
 
