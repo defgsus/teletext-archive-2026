@@ -19,7 +19,7 @@ jobs:
           pip install -r requirements.txt
       - name: scraper
         run: |
-          python update.py -j 10 > commit-message.md
+          python update.py -j 14 > commit-message.md
           cat commit-message.md
           ls -la
       - name: git config user
