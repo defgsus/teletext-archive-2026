@@ -1,5 +1,5 @@
-{"scraper":"wdr","timestamp":"2026-09-11T19:00:35"}
-{"page":100,"sub_page":1,"timestamp":"2026-09-11T19:00:36"}
+{"scraper":"wdr","timestamp":"2026-09-12T03:30:40"}
+{"page":100,"sub_page":1,"timestamp":"2026-09-12T03:30:42"}
 [["ww","  "],["ll","          "],["ww","                 "],["rb","  "],["yb","VIDEOTEXT"]]
 [["ww","  "],["ll","  "],["wl","WDR     "],["ww","  "],["lw","WESTDEUTSCHER  "],["ll","     "],["yl","      "]]
 [["ww","  "],["_w","      "],["lw","      RUNDFUNK KÖLN             "]]
@@ -20,10 +20,8 @@
 [["wb"," Ergebnisse/Tickerübersicht          "],["yb",""]]
 [["yb","23"]]
 [["wb"," "],["_b","                                       "]]
-[["wb"," 20.15 KATJES "],["yb","HD, UT                 "]]
-[["yb","31"]]
-[["wb"," 21.00 Johann König findet "],["yb","HD, UT    "]]
-[["yb","31"]]
+[["wb"," 05.25 Lokalzeit OWL "],["yb","HD                 "]]
+[["wb"," 05.50 Lokalzeit Südwestfalen "],["yb","HD        "]]
 [["wb","                                        "]]
 [["wb"," "],["_b","                                       "]]
 [["wb"," "],["yb",""]]
@@ -39,7 +37,7 @@
 [["yb","55  "],["wb","Gewinnzahlen      "],["yb",""]]
 [["yb","80  "],["wb","Dossiers   "]]
 [["wb","                                        "]]
-[["ww","            "],["lw","Aachen 19°C Regen           "]]
+[["ww","       "],["lw","Aachen 13°C feuchter Dunst       "]]
 [["wb","        "],["wg"," + "]]
 [["wg","101"],["wg"," "]]
 {"page":101,"sub_page":1,"timestamp":"2026-09-11T19:00:36"}
